@@ -1,9 +1,15 @@
-const { createElement } = require("react");
+const addItemInput = document.querySelector("input.addItemInput");
+const addItemButton = document.querySelector("button.addItemButton");
+const planList = document.getElementById("ul.planList;")
 
 
 
-function newplan() {
-    const newp = document.createElement("div")
-    newp.innerHTML = "<h1>This is a new plan</h1> <h3> We like to plan</h3>";
-    document.body.appendChild(newp);
-}
+addItemButton.addEventListener("click", () => {
+    let ul = document.getElementById("thelist");
+    let li = document.createElement("li");
+    li.textContent = addItemInput.value;
+    ul.appendChild(li);
+    addItemInput.value = "";
+});
+
+
